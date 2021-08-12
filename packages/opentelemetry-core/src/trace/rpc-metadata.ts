@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// TODO: update to relative src path
 import { Context, createContextKey, Span } from '@opentelemetry/api';
 
 const RPC_METADATA_KEY = createContextKey(

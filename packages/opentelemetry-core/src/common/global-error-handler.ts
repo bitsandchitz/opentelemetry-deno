@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
+// TODO: update to relative src paths
 import { Exception } from '@opentelemetry/api';
-import { loggingErrorHandler } from './logging-error-handler';
-import { ErrorHandler } from './types';
+import { loggingErrorHandler } from './logging-error-handler.ts';
+import { ErrorHandler } from './types.ts';
 
 /** The global error handler delegate */
 let delegateHandler = loggingErrorHandler();

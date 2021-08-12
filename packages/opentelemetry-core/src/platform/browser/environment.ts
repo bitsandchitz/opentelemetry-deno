@@ -19,7 +19,7 @@ import {
   ENVIRONMENT,
   RAW_ENVIRONMENT,
   parseEnvironment,
-} from '../../utils/environment';
+} from '../../utils/environment.ts';
 
 /**
  * Gets the environment variables

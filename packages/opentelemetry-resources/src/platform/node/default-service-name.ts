@@ -15,5 +15,6 @@
  */
 
 export function defaultServiceName() {
-    return `unknown_service:${process.argv0}`;
+    // return `unknown_service:${process.argv0}`; // NODE version
+    return `unknown_service:${Deno.args[0]}`; // DENO version
 }

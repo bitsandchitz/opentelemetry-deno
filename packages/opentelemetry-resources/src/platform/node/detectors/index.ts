@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export * from './EnvDetector';
-export * from './ProcessDetector';
+export * from './EnvDetector.ts';
+export * from './ProcessDetector.ts';

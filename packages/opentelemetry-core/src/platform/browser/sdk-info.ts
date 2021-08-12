@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// TODO: update to relative src paths
 
-import { VERSION } from '../../version';
+import { VERSION } from '../../version.ts';
 import {
   TelemetrySdkLanguageValues,
   SemanticResourceAttributes,

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// TODO: update to relative src paths
 import {
   BaggageEntry,
   Context,
@@ -23,18 +23,18 @@ import {
   TextMapSetter,
 } from '@opentelemetry/api';
 
-import { isTracingSuppressed } from '../../trace/suppress-tracing';
+import { isTracingSuppressed } from '../../trace/suppress-tracing.ts';
 import {
   BAGGAGE_HEADER,
   BAGGAGE_ITEMS_SEPARATOR,
   BAGGAGE_MAX_NAME_VALUE_PAIRS,
   BAGGAGE_MAX_PER_NAME_VALUE_PAIRS
-} from '../constants';
+} from '../constants.ts';
 import {
   getKeyPairs,
   parsePairKeyValue,
   serializeKeyPairs
-} from '../utils';
+} from '../utils.ts';
 
 /**
  * Propagates {@link Baggage} through Context format propagation.

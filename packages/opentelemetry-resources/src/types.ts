@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-import { Resource } from './Resource';
-import { ResourceDetectionConfig } from './config';
+import { Resource } from './Resource.ts';
+import { ResourceDetectionConfig } from './config.ts';
 
 /** Interface for Resource attributes  */
 export interface ResourceAttributes {

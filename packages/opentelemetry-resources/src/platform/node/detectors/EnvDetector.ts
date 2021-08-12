@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// TODO: update to relative src paths
 import { diag } from '@opentelemetry/api';
 import { getEnv } from '@opentelemetry/core';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
@@ -22,7 +22,7 @@ import {
   Resource,
   ResourceDetectionConfig,
   ResourceAttributes,
-} from '../../../';
+} from '../../../index.ts';
 
 /**
  * EnvDetector can be used to detect the presence of and create a Resource

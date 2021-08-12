@@ -14,24 +14,29 @@
  * limitations under the License.
  */
 
-import * as os from 'os';
+// import * as os from 'os';
 import {
   DEFAULT_ENVIRONMENT,
   ENVIRONMENT,
   RAW_ENVIRONMENT,
   parseEnvironment,
-} from '../../utils/environment';
+} from '../../utils/environment.ts';
+import {
+  hostname
+} from 'https://deno.land/std/node/os.ts';
 
 /**
  * Gets the environment variables
  */
 export function getEnv(): Required<ENVIRONMENT> {
-  const processEnv = parseEnvironment(process.env as RAW_ENVIRONMENT);
+  const rawEnv: RAW_ENVIRONMENT = Deno.env.toObject();
+  const processEnv = parseEnvironment( rawEnv );
   return Object.assign(
     {
-      HOSTNAME: os.hostname(),
+      HOSTNAME: hostname(),
     },
     DEFAULT_ENVIRONMENT,
     processEnv
   );
 }
+Deno.metrics()

@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+// TODO: update to relative src paths
+
 import { diag } from '@opentelemetry/api';
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
-import { Detector, Resource, ResourceDetectionConfig } from '../../../';
-import { ResourceAttributes } from '../../../types';
+import { Detector, Resource, ResourceDetectionConfig } from '../../../index.ts';
+import { ResourceAttributes } from '../../../types.ts';
 
 /**
  * ProcessDetector will be used to detect the resources related current process running
@@ -26,11 +28,14 @@ import { ResourceAttributes } from '../../../types';
 class ProcessDetector implements Detector {
   async detect(config?: ResourceDetectionConfig): Promise<Resource> {
     const processResource: ResourceAttributes = {
-      [SemanticResourceAttributes.PROCESS_PID]: process.pid,
-      [SemanticResourceAttributes.PROCESS_EXECUTABLE_NAME]: process.title || '',
-      [SemanticResourceAttributes.PROCESS_COMMAND]: process.argv[1] || '',
-      [SemanticResourceAttributes.PROCESS_COMMAND_LINE]:
-        process.argv.join(' ') || '',
+      [SemanticResourceAttributes.PROCESS_PID]: Deno.pid,
+      // [SemanticResourceAttributes.PROCESS_PID]: process.pid,
+      [SemanticResourceAttributes.PROCESS_EXECUTABLE_NAME]: Deno.mainModule || '',
+      // [SemanticResourceAttributes.PROCESS_EXECUTABLE_NAME]: process.title || '',
+      [SemanticResourceAttributes.PROCESS_COMMAND]: Deno.args[1] || '',
+      // [SemanticResourceAttributes.PROCESS_COMMAND]: process.argv[1] || '',
+      [SemanticResourceAttributes.PROCESS_COMMAND_LINE]: Deno.args.join(' ') || '',
+      // [SemanticResourceAttributes.PROCESS_COMMAND_LINE]: process.argv.join(' ') || '',
     };
     return this._getResourceAttributes(processResource, config);
   }
@@ -46,12 +51,10 @@ class ProcessDetector implements Detector {
     _config?: ResourceDetectionConfig
   ) {
     if (
-      processResource[SemanticResourceAttributes.PROCESS_EXECUTABLE_NAME] ===
-        '' ||
-      processResource[SemanticResourceAttributes.PROCESS_EXECUTABLE_PATH] ===
-        '' ||
-      processResource[SemanticResourceAttributes.PROCESS_COMMAND] === '' ||
-      processResource[SemanticResourceAttributes.PROCESS_COMMAND_LINE] === ''
+      processResource[SemanticResourceAttributes.PROCESS_EXECUTABLE_NAME] === '' ||
+      processResource[SemanticResourceAttributes.PROCESS_EXECUTABLE_PATH] === '' ||
+      processResource[SemanticResourceAttributes.PROCESS_COMMAND]         === '' ||
+      processResource[SemanticResourceAttributes.PROCESS_COMMAND_LINE]    === ''
     ) {
       diag.debug(
         'ProcessDetector failed: Unable to find required process resources. '

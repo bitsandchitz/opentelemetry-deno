@@ -13,6 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+	
+import {
+  // decode as base64Decode,
+  encode as base64Encode,
+} from 'https://deno.land/std/encoding/base64.ts';
+
 export function hexToBase64(hexStr: string): string {
   const hexStrLen = hexStr.length;
   let hexAsciiCharsStr = '';
@@ -22,5 +29,5 @@ export function hexToBase64(hexStr: string): string {
     hexAsciiCharsStr += String.fromCharCode(hexVal);
   }
 
-  return Buffer.from(hexAsciiCharsStr, 'ascii').toString('base64');
+  return base64Encode(hexAsciiCharsStr);
 }

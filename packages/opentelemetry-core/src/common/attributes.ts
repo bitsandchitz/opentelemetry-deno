@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// TODO: update to relative src paths
 import { SpanAttributeValue, SpanAttributes } from '@opentelemetry/api';
 
 export function sanitizeAttributes(attributes: unknown): SpanAttributes {

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import type { Detector } from './types';
+import type { Detector } from './types.ts';
 
 /**
  * ResourceDetectionConfig provides an interface for configuring resource auto-detection.

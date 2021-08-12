@@ -14,4 +14,4 @@
  * limitations under the License.
  */
 
-export const otperformance = performance;
+export const otperformance = performance

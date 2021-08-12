@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// TODO: update to relative src paths
 import { diag, Exception } from '@opentelemetry/api';
-import { ErrorHandler } from './types';
+import { ErrorHandler } from './types.ts';
 
 /**
  * Returns a function that logs an error using the provided logger, or a

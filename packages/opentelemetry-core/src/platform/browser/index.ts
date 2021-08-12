@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-export * from './environment';
-export * from './hex-to-base64';
-export * from './RandomIdGenerator';
-export * from './performance';
-export * from './sdk-info';
-export * from './timer-util';
+export * from './environment.ts';
+export * from './hex-to-base64.ts';
+export * from './RandomIdGenerator.ts';
+export * from './performance.ts';
+export * from './sdk-info.ts';
+export * from './timer-util.ts';

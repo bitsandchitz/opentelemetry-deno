@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-export * as api from '@opentelemetry/api';
-export * as contextBase from '@opentelemetry/api';
-export * as core from '@opentelemetry/core';
-export * as metrics from '@opentelemetry/sdk-metrics-base';
-export * as node from '@opentelemetry/sdk-trace-node';
-export * as resources from '@opentelemetry/resources';
-export * as tracing from '@opentelemetry/sdk-trace-base';
+// TODO: fix commented out dependency with relative paths to src
+// export * as api from '@opentelemetry/api';
+// export * as contextBase from '@opentelemetry/api';
+// export * as core from '@opentelemetry/core';
+// export * as metrics from '@opentelemetry/sdk-metrics-base';
+// export * as node from '@opentelemetry/sdk-trace-node';
+export * as resources from '../../opentelemetry-resources/src/index.ts';
+// export * as tracing from '@opentelemetry/sdk-trace-base';
 export * from './sdk.ts';
 export * from './types.ts';

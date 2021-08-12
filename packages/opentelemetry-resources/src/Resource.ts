@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
+// TODO: update to relative src paths
 import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions';
 import { SDK_INFO } from '@opentelemetry/core';
-import { ResourceAttributes } from './types';
-import { defaultServiceName } from './platform';
+import { ResourceAttributes } from './types.ts';
+import { defaultServiceName } from './platform/index.ts';
 
 /**
  * A Resource describes the entity for which a signals (metrics or trace) are

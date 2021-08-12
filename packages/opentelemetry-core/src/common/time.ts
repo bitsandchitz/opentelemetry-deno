@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// TODO: update to relative src paths
 
 import * as api from '@opentelemetry/api';
-import { otperformance as performance } from '../platform';
-import { TimeOriginLegacy } from './types';
+// import { otperformance as performance } from '../platform/index.ts';
+import { TimeOriginLegacy } from './types.ts';
 
 const NANOSECOND_DIGITS = 9;
 const SECOND_TO_NANOSECONDS = Math.pow(10, NANOSECOND_DIGITS);
@@ -84,8 +85,8 @@ export function timeInputToHrTime(time: api.TimeInput): api.HrTime {
       // epoch milliseconds or performance.timeOrigin
       return numberToHrtime(time);
     }
-  } else if (time instanceof Date) {
-    return numberToHrtime(time.getTime());
+  } else if ( (time as any) instanceof Date ) {
+    return numberToHrtime((time as Date).getTime());
   } else {
     throw TypeError('Invalid input type');
   }
@@ -170,6 +171,6 @@ export function isTimeInput(value: unknown): value is api.HrTime | number | Date
   return (
     isTimeInputHrTime(value) ||
     typeof value === 'number' ||
-    value instanceof Date
+    (value as any) instanceof Date
   );
 }

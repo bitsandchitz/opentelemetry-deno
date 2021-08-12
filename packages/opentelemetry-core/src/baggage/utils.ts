@@ -13,13 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// TODO: update to relative src paths
+
 import { Baggage, BaggageEntryMetadata, baggageEntryMetadataFromString } from '@opentelemetry/api';
 import {
   BAGGAGE_ITEMS_SEPARATOR,
   BAGGAGE_PROPERTIES_SEPARATOR,
   BAGGAGE_KEY_PAIR_SEPARATOR,
   BAGGAGE_MAX_TOTAL_LENGTH,
-} from './constants';
+} from './constants.ts';
 
 type ParsedBaggageKeyValue = { key: string, value: string, metadata: BaggageEntryMetadata | undefined };
 
@@ -34,8 +36,7 @@ export function serializeKeyPairs(keyPairs: string[]): string {
 export function getKeyPairs(baggage: Baggage): string[] {
   return baggage
     .getAllEntries()
-    .map(
-      ([key, value]) =>
+    .map(([key, value]: [any, any]) =>
         `${encodeURIComponent(key)}=${encodeURIComponent(value.value)}`
     );
 }
