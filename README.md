@@ -1,3 +1,10 @@
+WIP - Trying to refactor the existing open-telemetry Node implementation to work with the Deno runtime, so it can also report tracing and metrics to APM 
+
+need to lift and enhance the exisiting TypeScript code to be more compatable with Deno out-of-the-box ts configuration around imports and exports
+
+ ```ts
+import * as openTelemetrySDK from 'https://raw.githubusercontent.com/bitsandchitz/opentelemetry-deno/main/packages/opentelemetry-sdk-node/src/index.ts'
+```
 
 ---
 <p align="center">
